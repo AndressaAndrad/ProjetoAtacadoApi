@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Camada de Dados", "4 - Camada de Dados", "{CE659436-CA54-4AE8-8D9E-68F30F9369E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atacado.EF", "Atacado.EF\Atacado.EF.csproj", "{D91F4401-F442-4509-81F1-7DA951F6B918}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atacado.EF", "Atacado.EF\Atacado.EF.csproj", "{D91F4401-F442-4509-81F1-7DA951F6B918}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Camada de Info", "3 - Camada de Info", "{36A0B7F9-077A-4A87-9A40-DE2D32C57215}"
 EndProject
@@ -13,13 +13,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Camada de Serviço", "2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Camada de Front", "1 - Camada de Front", "{C3FDEC7A-BDA5-4095-8450-90A01DC69797}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atacado.Poco", "Atacado.Poco\Atacado.Poco.csproj", "{C9C42917-BE80-41F0-84F3-49F9AE6530B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atacado.Poco", "Atacado.Poco\Atacado.Poco.csproj", "{C9C42917-BE80-41F0-84F3-49F9AE6530B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atacado.Mapper", "Atacado.Mapper\Atacado.Mapper.csproj", "{5558F555-E0BB-4024-AF20-C9E37E5DC4A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atacado.Mapper", "Atacado.Mapper\Atacado.Mapper.csproj", "{5558F555-E0BB-4024-AF20-C9E37E5DC4A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atacado.Dal", "Atacado.Dal\Atacado.Dal.csproj", "{243902B8-9F91-47EF-9CD2-0770B73CADBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atacado.Dal", "Atacado.Dal\Atacado.Dal.csproj", "{243902B8-9F91-47EF-9CD2-0770B73CADBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atacado.Service", "Atacado.Service\Atacado.Service.csproj", "{588C8BB6-8D58-447A-9953-D378C93A8055}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atacado.Service", "Atacado.Service\Atacado.Service.csproj", "{588C8BB6-8D58-447A-9953-D378C93A8055}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppTeste", "ConsoleAppTeste\ConsoleAppTeste.csproj", "{B0A4B13E-A744-4CE0-A2C8-254FD6D6EDA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{588C8BB6-8D58-447A-9953-D378C93A8055}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{588C8BB6-8D58-447A-9953-D378C93A8055}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{588C8BB6-8D58-447A-9953-D378C93A8055}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0A4B13E-A744-4CE0-A2C8-254FD6D6EDA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0A4B13E-A744-4CE0-A2C8-254FD6D6EDA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0A4B13E-A744-4CE0-A2C8-254FD6D6EDA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0A4B13E-A744-4CE0-A2C8-254FD6D6EDA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +63,7 @@ Global
 		{5558F555-E0BB-4024-AF20-C9E37E5DC4A8} = {36A0B7F9-077A-4A87-9A40-DE2D32C57215}
 		{243902B8-9F91-47EF-9CD2-0770B73CADBA} = {CE659436-CA54-4AE8-8D9E-68F30F9369E4}
 		{588C8BB6-8D58-447A-9953-D378C93A8055} = {9BF855F0-43C6-4EA7-8A7F-1AD8ECB73167}
+		{B0A4B13E-A744-4CE0-A2C8-254FD6D6EDA4} = {C3FDEC7A-BDA5-4095-8450-90A01DC69797}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F23EC6DD-5C5E-4B88-A987-3E611DA69F49}
