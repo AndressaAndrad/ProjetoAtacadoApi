@@ -10,16 +10,15 @@ namespace Atacado.Dal.Estoque
 {
     public class ProdutoDao : BaseAncestralDao<Produto>
     {
-        private AtacadoContext contexto;
+       
         public ProdutoDao() : base()
-        {
-            this.contexto = new AtacadoContext();
-        }
+        { }
         public override Produto Create(Produto obj)
         {
             int chave = this.contexto.Produtos.Max(cat => cat.IdProduto) + 1;
             obj.IdProduto = chave;
             this.contexto.Produtos.Add(obj);
+            this.contexto.SaveChanges();
             return obj;
         }
 
@@ -42,6 +41,7 @@ namespace Atacado.Dal.Estoque
             alt.IdSubcategoria = obj.IdSubcategoria;
             alt.DescricaoProduto = obj.DescricaoProduto;
             alt.Situacao = obj.Situacao;
+            this.contexto.SaveChanges();
             return obj;
 
         }
@@ -49,6 +49,7 @@ namespace Atacado.Dal.Estoque
         {
             Produto del = this.Read(id);
             this.contexto.Produtos.Remove(del);
+            this.contexto.SaveChanges();
             return del;
         }
 
