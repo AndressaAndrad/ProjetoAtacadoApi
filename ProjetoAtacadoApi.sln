@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atacado.Service", "Atacado.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppTeste", "ConsoleAppTeste\ConsoleAppTeste.csproj", "{B0A4B13E-A744-4CE0-A2C8-254FD6D6EDA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtacadoApi", "AtacadoApi\AtacadoApi.csproj", "{C8AC3564-10F8-448B-886F-BD66253FBD15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AtacadoApi", "AtacadoApi\AtacadoApi.csproj", "{C8AC3564-10F8-448B-886F-BD66253FBD15}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9 - Documentos", "9 - Documentos", "{AE6164AF-9A0D-4A5D-9177-8F2EFF492A6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bancos>
+	<banco>
+		<IdBanco>63</IdBanco>
+		<CodigoBanco>2400</CodigoBanco>
+		<DescricaoBanco>Banco do Brasil</DescricaoBanco>
+		<SiteBanco>bancodobrasil.com </SiteBanco>
+		<Situacao>true</Situacao>
+	</banco>
+	<banco>
+		<IdBanco>53</IdBanco>
+		<CodigoBanco>3124</CodigoBanco>
+		<DescricaoBanco>Santander</DescricaoBanco>
+		<SiteBanco>santander.com</SiteBanco>
+		<Situacao>true</Situacao>
+	</banco>
+	<banco>
+		<IdBanco>13</IdBanco>
+		<CodigoBanco>2356</CodigoBanco>
+		<DescricaoBanco>Inter</DescricaoBanco>
+		<SiteBanco>inter.com</SiteBanco>
+		<Situacao>true</Situacao>
+	</banco>
+	<banco>
+		<IdBanco>54</IdBanco>
+		<CodigoBanco>3146</CodigoBanco>
+		<DescricaoBanco>Caixa</DescricaoBanco>
+		<SiteBanco>caixa.com</SiteBanco>
+		<Situacao>true</Situacao>
+	</banco>
+	<banco>
+		<IdBanco>23</IdBanco>
+		<CodigoBanco>2635</CodigoBanco>
+		<DescricaoBanco>Bradesco</DescricaoBanco>
+		<SiteBanco>bradesco.com</SiteBanco>
+		<Situacao>true</Situacao>
+	</banco>
+</Bancos>
