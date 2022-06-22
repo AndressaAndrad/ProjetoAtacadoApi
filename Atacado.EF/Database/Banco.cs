@@ -12,8 +12,8 @@ namespace Atacado.EF.Database
         [Key]
         [Column("ID_Banco")]
         public int IdBanco { get; set; }
-        [Column("Codigo_Banco")]
-        public int? CodigoBanco { get; set; }
+        [Column("Cod_Banco")]
+        public int? CodBanco { get; set; }
         [Column("Descricao_Banco")]
         [Unicode(false)]
         public string? DescricaoBanco { get; set; }

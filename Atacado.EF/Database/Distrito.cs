@@ -14,11 +14,11 @@ namespace Atacado.EF.Database
         public int IdDistrito { get; set; }
         [Column("Descricao_Distrito")]
         [Unicode(false)]
-        public string? DescricaoDistrito { get; set; }
-        [Column("SiglaUF")]
+        public string DescricaoDistrito { get; set; } = null!;
+        [Column("Sigla_UF")]
         [StringLength(2)]
         [Unicode(false)]
-        public string? SiglaUf { get; set; }
+        public string SiglaUf { get; set; } = null!;
         public bool? Situacao { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime? DataInclusao { get; set; }
@@ -27,6 +27,6 @@ namespace Atacado.EF.Database
         [Column(TypeName = "datetime")]
         public DateTime? DataExclusao { get; set; }
 
-        public virtual UnidadesFederacao? SiglaUfNavigation { get; set; }
+        public virtual UnidadesFederacao SiglaUfNavigation { get; set; } = null!;
     }
 }

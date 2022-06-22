@@ -15,7 +15,7 @@ namespace Atacado.EF.Database
         [Column("Descricao_Mesoregiao")]
         [Unicode(false)]
         public string DescricaoMesoregiao { get; set; } = null!;
-        [Column("SiglaUF")]
+        [Column("Sigla_UF")]
         [StringLength(2)]
         [Unicode(false)]
         public string SiglaUf { get; set; } = null!;

@@ -15,10 +15,10 @@ namespace Atacado.EF.Database
         [Column("Abreviado_Idioma")]
         [StringLength(2)]
         [Unicode(false)]
-        public string AbreviadoIdioma { get; set; } = null!;
+        public string? AbreviadoIdioma { get; set; }
         [Column("Descricao_Idioma")]
         [Unicode(false)]
-        public string DescricaoIdioma { get; set; } = null!;
+        public string? DescricaoIdioma { get; set; }
         public bool? Situacao { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime? DataInclusao { get; set; }

@@ -19,9 +19,9 @@ namespace Atacado.EF.Database
         public int IdFormaPagto { get; set; }
         [Column("ID_Tipo_Forma_Pagto")]
         public int IdTipoFormaPagto { get; set; }
-        [Column("Descricao_Forma_Envio")]
+        [Column("Descricao_Forma_Pagto")]
         [Unicode(false)]
-        public string DescricaoFormaEnvio { get; set; } = null!;
+        public string DescricaoFormaPagto { get; set; } = null!;
         public bool? Situacao { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime? DataInclusao { get; set; }
@@ -33,7 +33,7 @@ namespace Atacado.EF.Database
         [ForeignKey("IdTipoFormaPagto")]
         [InverseProperty("FormaPagtos")]
         public virtual TipoFormaPagto IdTipoFormaPagtoNavigation { get; set; } = null!;
-        [InverseProperty("IdFormaPagto1")]
+        [InverseProperty("IdFormaPagtoNavigation")]
         public virtual ICollection<Pedido> Pedidos { get; set; }
     }
 }

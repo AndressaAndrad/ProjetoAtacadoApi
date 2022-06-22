@@ -10,16 +10,21 @@ namespace Atacado.EF.Database
     public partial class AreaConhecimento
     {
         [Key]
-        [Column("ID_Area_Conhecimento")]
-        public int IdAreaConhecimento { get; set; }
-        [Column("Descricao_Area_Conhecimento")]
+        [Column("ID_Area")]
+        public int IdArea { get; set; }
+
+        [Column("Descricao_Area")]
         [Unicode(false)]
-        public string DescricaoAreaConhecimento { get; set; } = null!;
+        public string? DescricaoArea { get; set; }
+
         public bool? Situacao { get; set; }
+
         [Column(TypeName = "datetime")]
         public DateTime? DataInclusao { get; set; }
+
         [Column(TypeName = "datetime")]
         public DateTime? DataAlteracao { get; set; }
+
         [Column(TypeName = "datetime")]
         public DateTime? DataExclusao { get; set; }
     }

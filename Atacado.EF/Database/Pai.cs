@@ -15,13 +15,13 @@ namespace Atacado.EF.Database
         [StringLength(3)]
         [Unicode(false)]
         public string SiglaPais { get; set; } = null!;
-        [Column("Codigo_Idioma")]
+        [Column("Cod_Idioma")]
         [StringLength(2)]
         [Unicode(false)]
-        public string CodigoIdioma { get; set; } = null!;
+        public string CodIdioma { get; set; } = null!;
         [Column("Descricao_Pais")]
         [Unicode(false)]
-        public string DescricaoPais { get; set; } = null!;
+        public string? DescricaoPais { get; set; }
         public bool? Situacao { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime? DataInclusao { get; set; }

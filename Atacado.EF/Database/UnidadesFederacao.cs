@@ -20,12 +20,12 @@ namespace Atacado.EF.Database
         }
 
         [Key]
-        [Column("ID_Unidades_Federacao")]
-        public int IdUnidadesFederacao { get; set; }
-        [Column("Descricao_Unidades_Federacao")]
+        [Column("ID_UF")]
+        public int IdUf { get; set; }
+        [Column("Descricao_UF")]
         [Unicode(false)]
-        public string DescricaoUnidadesFederacao { get; set; } = null!;
-        [Column("SiglaUF")]
+        public string DescricaoUf { get; set; } = null!;
+        [Column("Sigla_UF")]
         [StringLength(2)]
         [Unicode(false)]
         public string SiglaUf { get; set; } = null!;

@@ -37,12 +37,12 @@ namespace Atacado.EF.Database
         [ForeignKey("IdCliente")]
         [InverseProperty("Pedidos")]
         public virtual Cliente IdClienteNavigation { get; set; } = null!;
+        [ForeignKey("IdFormaEnvio")]
+        [InverseProperty("Pedidos")]
+        public virtual FormaEnvio IdFormaEnvioNavigation { get; set; } = null!;
         [ForeignKey("IdFormaPagto")]
         [InverseProperty("Pedidos")]
-        public virtual FormaPagto IdFormaPagto1 { get; set; } = null!;
-        [ForeignKey("IdFormaPagto")]
-        [InverseProperty("Pedidos")]
-        public virtual FormaEnvio IdFormaPagtoNavigation { get; set; } = null!;
+        public virtual FormaPagto IdFormaPagtoNavigation { get; set; } = null!;
         [InverseProperty("IdPedidoNavigation")]
         public virtual ICollection<Carrinho> Carrinhos { get; set; }
     }

@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Atacado.EF.Database
 {
     [Keyless]
-    public partial class VwFuncionarioAtivosInformacao
+    public partial class VwFuncionariosAtivosInformacao
     {
         [Column("ID_Funcionario")]
         public long IdFuncionario { get; set; }

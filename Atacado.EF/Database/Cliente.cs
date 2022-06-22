@@ -21,6 +21,7 @@ namespace Atacado.EF.Database
         [Unicode(false)]
         public string NomeCliente { get; set; } = null!;
         [Column("Endereco_Cliente")]
+        [StringLength(255)]
         [Unicode(false)]
         public string EnderecoCliente { get; set; } = null!;
         [Column("Cpf_Cliente")]

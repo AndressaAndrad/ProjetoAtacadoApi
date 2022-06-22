@@ -30,7 +30,7 @@ namespace Atacado.EF.Database
         [Column(TypeName = "datetime")]
         public DateTime? DataExclusao { get; set; }
 
-        [InverseProperty("IdFormaPagtoNavigation")]
+        [InverseProperty("IdFormaEnvioNavigation")]
         public virtual ICollection<Pedido> Pedidos { get; set; }
     }
 }

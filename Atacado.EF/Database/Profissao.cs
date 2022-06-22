@@ -12,9 +12,9 @@ namespace Atacado.EF.Database
         [Key]
         [Column("ID_Profissao")]
         public int IdProfissao { get; set; }
-        [Column("Profissao")]
+        [Column("Descricao_Profissao")]
         [Unicode(false)]
-        public string Profissao1 { get; set; } = null!;
+        public string DescricaoProfissao { get; set; } = null!;
         public bool? Situacao { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime? DataInclusao { get; set; }

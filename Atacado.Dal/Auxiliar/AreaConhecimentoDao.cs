@@ -30,12 +30,12 @@ namespace Atacado.Dal.Auxiliar
 
         public override AreaConhecimento Delete(AreaConhecimento obj)
         {
-           return this.Delete(obj.IdAreaConhecimento);
+           return this.Delete(obj.IdArea);
         }
 
         public override AreaConhecimento Read(int id)
         {
-            AreaConhecimento obj = this.contexto.AreaConhecimentos.SingleOrDefault(area => area.IdAreaConhecimento == id);
+            AreaConhecimento obj = this.contexto.AreaConhecimentos.SingleOrDefault(area => area.IdArea == id);
             return obj;
         }
 
@@ -46,8 +46,8 @@ namespace Atacado.Dal.Auxiliar
 
         public override AreaConhecimento Update(AreaConhecimento obj)
         {
-            AreaConhecimento alt = this.Read(obj.IdAreaConhecimento);
-            alt.DescricaoAreaConhecimento = obj.DescricaoAreaConhecimento;
+            AreaConhecimento alt = this.Read(obj.IdArea);
+            alt.DescricaoArea = obj.DescricaoArea;
             alt.Situacao = obj.Situacao;
             this.contexto.SaveChanges();
             return alt;

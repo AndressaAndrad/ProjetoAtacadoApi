@@ -10,11 +10,11 @@ namespace Atacado.EF.Database
     public partial class TipoLogradouro
     {
         [Key]
-        [Column("ID_Tipo_Logradouro")]
-        public int IdTipoLogradouro { get; set; }
-        [Column("Tipo_Logradouro")]
+        [Column("ID_TipoLog")]
+        public int IdTipoLog { get; set; }
+        [Column("Descricao_TipoLog")]
         [Unicode(false)]
-        public string TipoLogradouro1 { get; set; } = null!;
+        public string DescricaoTipoLog { get; set; } = null!;
         public bool? Situacao { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime? DataInclusao { get; set; }

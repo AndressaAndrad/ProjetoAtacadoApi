@@ -15,8 +15,7 @@ namespace Atacado.Dal.Estoque
         { }
         public override Produto Create(Produto obj)
         {
-            int chave = this.contexto.Produtos.Max(cat => cat.IdProduto) + 1;
-            obj.IdProduto = chave;
+            
             this.contexto.Produtos.Add(obj);
             this.contexto.SaveChanges();
             return obj;
@@ -32,6 +31,10 @@ namespace Atacado.Dal.Estoque
         {
             return this.contexto.Produtos.ToList();
 
+        }
+         public List<Produto> ReadAll(int skip, int take)
+        {
+            return this.contexto.Produtos.Skip(skip).Take(take).ToList();
         }
 
         public override Produto Update(Produto obj)

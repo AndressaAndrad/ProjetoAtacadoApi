@@ -6,18 +6,20 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Atacado.EF.Database
 {
-    [Table("Nome")]
-    public partial class Nome
+    [Table("PrimeiroNome")]
+    public partial class PrimeiroNome
     {
         [Key]
-        [Column("ID_Nome")]
-        public int IdNome { get; set; }
-        [Column("Nome")]
+        [Column("ID_PriNome")]
+        public int IdPriNome { get; set; }
+        [Column("Nome_PriNome")]
+        [StringLength(50)]
         [Unicode(false)]
-        public string Nome1 { get; set; } = null!;
+        public string? NomePriNome { get; set; }
+        [Column("Sexo_PriNome")]
         [StringLength(1)]
         [Unicode(false)]
-        public string Sexo { get; set; } = null!;
+        public string? SexoPriNome { get; set; }
         public bool? Situacao { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime? DataInclusao { get; set; }
