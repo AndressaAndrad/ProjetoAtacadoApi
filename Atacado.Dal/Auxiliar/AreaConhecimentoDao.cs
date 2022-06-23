@@ -43,6 +43,10 @@ namespace Atacado.Dal.Auxiliar
         {
             return this.contexto.AreaConhecimentos.ToList();
         }
+        public List<AreaConhecimento> ReadAll(int skip, int take)
+        {
+            return this.contexto.AreaConhecimentos.Skip(skip).Take(take).ToList();
+        }
 
         public override AreaConhecimento Update(AreaConhecimento obj)
         {

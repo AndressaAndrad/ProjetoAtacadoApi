@@ -2,8 +2,8 @@
 {
     public class AreaConhecimentoPoco
     {
-        public int IdAreaConhecimento { get; set; }
-        public string DescricaoAreaConhecimento { get; set; } = null!;
+        public int IdArea { get; set; }
+        public string DescricaoArea { get; set; } = null!;
         public bool? Situacao { get; set; }
 
     }

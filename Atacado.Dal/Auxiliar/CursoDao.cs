@@ -43,12 +43,17 @@ namespace Atacado.Dal.Auxiliar
         {
             return this.contexto.Cursos.ToList();
         }
+        public List<Curso> ReadAll(int skip, int take)
+        {
+            return this.contexto.Cursos.Skip(skip).Take(take).ToList();
+        }
 
         public override Curso Update(Curso obj)
         {
             Curso alt = this.Read(obj.IdCurso);
             alt.DescricaoCurso = obj.DescricaoCurso;
-            alt.
+            this.contexto.SaveChanges();
+            return alt;
         }
     }
 }
