@@ -54,6 +54,7 @@ namespace Atacado.EF.Database
         /// </summary>
         public virtual DbSet<TipoRebanho> TipoRebanhos { get; set; } = null!;
 
+        public virtual DbSet<Rebanho> Rebanhos { get; set; } = null!;
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -438,10 +439,20 @@ namespace Atacado.EF.Database
 
             });
 
-            //
-            //Adicionado pelo programador.
-            //
             modelBuilder.Entity<TipoRebanho>().ToTable("Tipo_Rebanho");
+            //
+            //Adicionado pelo programador.(REBANHO)
+            //
+            modelBuilder.Entity<Rebanho>(entity =>
+            {
+                entity.Property(e => e.DataInclusao).HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.Situacao).HasDefaultValueSql("((1))");
+
+            });
+
+            OnModelCreatingPartial(modelBuilder);
+            modelBuilder.Entity<Rebanho>().ToTable("Rebanho");
 
             OnModelCreatingPartial(modelBuilder);
         }
