@@ -2,6 +2,7 @@
 using Atacado.EF.Database;
 using Atacado.Mapper.Estoque;
 using Atacado.Poco.Estoque;
+using Atacado.Repository.Estoque;
 using Atacado.Service.Ancestral;
 using System;
 using System.Collections.Generic;
@@ -11,51 +12,43 @@ using System.Threading.Tasks;
 
 namespace Atacado.Service.Estoque
 {
-    public class SubcategoriaService : BaseAncestralService<SubcategoriaPoco>
+    public class SubcategoriaService : BaseAncestralService<SubcategoriaPoco, Subcategoria>
     {
         private SubcategoriaMapper mapConfig;
-        private SubcategoriaDao dao ;
+        private SubcategoriaRepository repositorio;
         public SubcategoriaService()
         {
             this.mapConfig = new SubcategoriaMapper();
-            this.dao = new SubcategoriaDao();
+            this.repositorio = new SubcategoriaRepository(new AtacadoContext());
         }
         public override List<SubcategoriaPoco> Listar()
         {
-            List<Subcategoria> listDOM = this.dao.ReadAll();
+            List<Subcategoria> listDOM = this.repositorio.Read().ToList();
             return ProcessarListaDOM(listDOM);
         }
 
         public List<SubcategoriaPoco> Listar(int pular, int exibir)
         {
-            List<Subcategoria> listDOM = this.dao.ReadAll(pular, exibir);
+            List<Subcategoria> listDOM = this.repositorio.Read(pular, exibir).ToList();
             return ProcessarListaDOM(listDOM);
 
         }
 
-        private List<SubcategoriaPoco> ProcessarListaDOM(List<Subcategoria> listDOM)
+        protected override List<SubcategoriaPoco> ProcessarListaDOM(List<Subcategoria> listDOM)
         {
-            List<SubcategoriaPoco> listPOCO = new List<SubcategoriaPoco>();
-
-            foreach (Subcategoria item in listDOM)
-            {
-                SubcategoriaPoco poco = this.mapConfig.Mapper.Map<SubcategoriaPoco>(item);
-                listPOCO.Add(poco);
-            }
-
-            return listPOCO;
+            return listDOM.Select(dom => this.mapConfig.Mapper.Map<SubcategoriaPoco>(dom)).ToList();
         }
 
         public override SubcategoriaPoco Selecionar(int id)
         {
-            Subcategoria dom = this.dao.Read(id);
+            Subcategoria dom = this.repositorio.Read(id);
             SubcategoriaPoco poco = this.mapConfig.Mapper.Map<SubcategoriaPoco>(dom);
             return poco;
         }
         public override SubcategoriaPoco Criar(SubcategoriaPoco obj)
         {
             Subcategoria dom = this.mapConfig.Mapper.Map<Subcategoria>(obj);
-            Subcategoria criado = this.dao.Create(dom);
+            Subcategoria criado = this.repositorio.Add(dom);
             SubcategoriaPoco poco = this.mapConfig.Mapper.Map<SubcategoriaPoco>(criado);
             return poco;
 
@@ -63,7 +56,7 @@ namespace Atacado.Service.Estoque
         public override SubcategoriaPoco Atualizar(SubcategoriaPoco obj)
         {
             Subcategoria dom = this.mapConfig.Mapper.Map<Subcategoria>(obj);
-            Subcategoria atualizado = this.dao.Update(dom);
+            Subcategoria atualizado = this.repositorio.Edit(dom);
             SubcategoriaPoco poco = this.mapConfig.Mapper.Map<SubcategoriaPoco>(atualizado);
             return poco;
         }
@@ -73,7 +66,7 @@ namespace Atacado.Service.Estoque
         }
         public override SubcategoriaPoco Excluir(int id)
         {
-            Subcategoria excluido = this.dao.Delete(id);
+            Subcategoria excluido = this.repositorio.DeleteById(id);
             SubcategoriaPoco poco = this.mapConfig.Mapper.Map<SubcategoriaPoco>(excluido);
             return poco;
         }

@@ -3,6 +3,7 @@ using Atacado.EF.Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,9 +37,9 @@ namespace Atacado.Dal.Auxiliar
         }
         //
         //
-        public IQueryable<Rebanho> QueryBy(Func<Rebanho, bool> predicado)
+        public IQueryable<Rebanho> QueryBy(Expression<Func<Rebanho, bool>> predicado)
         {
-            return this.contexto.Rebanhos.Where(predicado).AsQueryable();
+            return this.contexto.Rebanhos.Where(predicado);
         }
 
         public override Rebanho Update(Rebanho obj)
