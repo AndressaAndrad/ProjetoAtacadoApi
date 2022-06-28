@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Atacado.Dal.Estoque;
 using Atacado.Repository.Estoque;
 
 namespace Atacado.Service.Estoque

@@ -10,6 +10,7 @@ namespace Atacado.Service.Ancestral
         where TPoco : class
         where TDom : class
     {
+        protected MapeadorGenerico<TPoco, TDom> mapeador;
         public virtual List<TPoco> Listar()
         {
             throw new NotImplementedException();

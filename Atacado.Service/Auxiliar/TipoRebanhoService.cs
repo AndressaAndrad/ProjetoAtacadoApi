@@ -1,6 +1,5 @@
 ﻿using Atacado.EF.Database;
 using Atacado.Poco;
-using Atacado.Dal.Estoque;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Atacado.Poco.Auxiliar;
 using Atacado.Service.Ancestral;
-using Atacado.Mapper.Auxiliar;
-using Atacado.Dal.Auxiliar;
 using Atacado.Repository.Auxiliar;
+using Atacado.Mapper.Auxiliar;
 
 namespace Atacado.Mapper
 {

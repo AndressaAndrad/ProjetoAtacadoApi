@@ -1,5 +1,4 @@
-﻿using Atacado.Dal.Auxiliar;
-using Atacado.EF.Database;
+﻿using Atacado.EF.Database;
 using Atacado.Mapper.Auxiliar;
 using Atacado.Poco.Auxiliar;
 using Atacado.Repository.Auxiliar;

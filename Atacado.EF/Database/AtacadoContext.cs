@@ -63,6 +63,8 @@ namespace Atacado.EF.Database
                 optionsBuilder.UseSqlServer("Server=(local);Database=Atacado202204;User Id=sa;Password=senha123");
             }
         }
+        public virtual DbSet<Funcionario> Funcionarios { get; set; } = null!;
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -453,6 +455,19 @@ namespace Atacado.EF.Database
 
             OnModelCreatingPartial(modelBuilder);
             modelBuilder.Entity<Rebanho>().ToTable("Rebanho");
+
+            //
+            // Adicionado pelo programador 28/06/22
+            //
+            modelBuilder.Entity<Funcionario>(entity =>
+            {
+                entity.Property(e => e.DataInclusao).HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.Situacao).HasDefaultValueSql("((1))");
+
+            });
+
+           modelBuilder.Entity<Funcionario>().ToTable("Funcionario");
 
             OnModelCreatingPartial(modelBuilder);
         }
