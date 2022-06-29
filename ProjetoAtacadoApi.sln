@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9 - Documentos", "9 - Docum
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atacado.Repository", "Atacado.Repository\Atacado.Repository.csproj", "{C1BE4CC2-C31E-424D-BA81-B951680FBBA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atacado.Business", "Atacado.Business\Atacado.Business.csproj", "{92942AED-89CD-49AD-B810-EA3A38A74D4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{C1BE4CC2-C31E-424D-BA81-B951680FBBA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1BE4CC2-C31E-424D-BA81-B951680FBBA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1BE4CC2-C31E-424D-BA81-B951680FBBA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92942AED-89CD-49AD-B810-EA3A38A74D4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92942AED-89CD-49AD-B810-EA3A38A74D4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92942AED-89CD-49AD-B810-EA3A38A74D4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92942AED-89CD-49AD-B810-EA3A38A74D4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +79,7 @@ Global
 		{B0A4B13E-A744-4CE0-A2C8-254FD6D6EDA4} = {C3FDEC7A-BDA5-4095-8450-90A01DC69797}
 		{C8AC3564-10F8-448B-886F-BD66253FBD15} = {C3FDEC7A-BDA5-4095-8450-90A01DC69797}
 		{C1BE4CC2-C31E-424D-BA81-B951680FBBA3} = {CE659436-CA54-4AE8-8D9E-68F30F9369E4}
+		{92942AED-89CD-49AD-B810-EA3A38A74D4F} = {9BF855F0-43C6-4EA7-8A7F-1AD8ECB73167}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F23EC6DD-5C5E-4B88-A987-3E611DA69F49}

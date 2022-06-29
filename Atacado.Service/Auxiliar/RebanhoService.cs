@@ -13,11 +13,11 @@ namespace Atacado.Service.Auxiliar
 {
     public class RebanhoService : BaseAncestralService<RebanhoPoco, Rebanho>
     {
-        private RebanhoMapper mapConfig;
+        
         private RebanhoRepository repositorio;
         public RebanhoService()
         {
-            this.mapConfig = new RebanhoMapper();
+            this.mapeador = new MapeadorGenerico<RebanhoPoco, Rebanho>();
             this.repositorio = new RebanhoRepository(new AtacadoContext()) ;
         }
 
@@ -36,28 +36,28 @@ namespace Atacado.Service.Auxiliar
 
         protected override List<RebanhoPoco> ProcessarListaDOM(List<Rebanho> listDOM)
         {
-            return listDOM.Select(dom => this.mapConfig.Mapper.Map<RebanhoPoco>(dom)).ToList(); //<-- MINIMAL API//
+            return listDOM.Select(dom => this.mapeador.Mecanismo.Map<RebanhoPoco>(dom)).ToList(); //<-- MINIMAL API//
         }
 
         public override RebanhoPoco Selecionar(int id)
         {
             Rebanho dom = this.repositorio.Read(id);
-            RebanhoPoco poco = this.mapConfig.Mapper.Map<RebanhoPoco>(dom);
+            RebanhoPoco poco = this.mapeador.Mecanismo.Map<RebanhoPoco>(dom);
             return poco;
         }
         public override RebanhoPoco Criar(RebanhoPoco obj)
         {
-            Rebanho dom = this.mapConfig.Mapper.Map<Rebanho>(obj);
+            Rebanho dom = this.mapeador.Mecanismo.Map<Rebanho>(obj);
             Rebanho criado = this.repositorio.Add(dom);
-            RebanhoPoco poco = this.mapConfig.Mapper.Map<RebanhoPoco>(criado);
+            RebanhoPoco poco = this.mapeador.Mecanismo.Map<RebanhoPoco>(criado);
             return poco;
 
         }
         public override RebanhoPoco Atualizar(RebanhoPoco obj)
         {
-            Rebanho dom = this.mapConfig.Mapper.Map<Rebanho>(obj);
+            Rebanho dom = this.mapeador.Mecanismo.Map<Rebanho>(obj);
             Rebanho atualizado = this.repositorio.Edit(dom);
-            RebanhoPoco poco = this.mapConfig.Mapper.Map<RebanhoPoco>(atualizado);
+            RebanhoPoco poco = this.mapeador.Mecanismo.Map<RebanhoPoco>(atualizado);
             return poco;
         }
         public override RebanhoPoco Excluir(RebanhoPoco obj)
@@ -67,7 +67,7 @@ namespace Atacado.Service.Auxiliar
         public override RebanhoPoco Excluir(int id)
         {
             Rebanho excluido = this.repositorio.DeleteById(id);
-            RebanhoPoco poco = this.mapConfig.Mapper.Map<RebanhoPoco>(excluido);
+            RebanhoPoco poco = this.mapeador.Mecanismo.Map<RebanhoPoco>(excluido);
             return poco;
         }
     }

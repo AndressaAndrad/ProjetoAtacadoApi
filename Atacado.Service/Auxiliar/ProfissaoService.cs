@@ -13,12 +13,11 @@ namespace Atacado.Service.Auxiliar
 {
     public class ProfissaoService : BaseAncestralService<ProfissaoPoco, Profissao>
     {
-        private ProfissaoMapper mapConfig;
         private ProfissaoRepository repositorio;
 
         public ProfissaoService()
         {
-            this.mapConfig = new ProfissaoMapper();
+            this.mapeador = new MapeadorGenerico<ProfissaoPoco, Profissao>();
             this.repositorio = new ProfissaoRepository(new AtacadoContext());
         }
 
@@ -32,27 +31,27 @@ namespace Atacado.Service.Auxiliar
 
         protected override List<ProfissaoPoco> ProcessarListaDOM(List<Profissao> listDOM)
         {
-            return listDOM.Select(dom => this.mapConfig.Mapper.Map<ProfissaoPoco>(dom)).ToList();
+            return listDOM.Select(dom => this.mapeador.Mecanismo.Map<ProfissaoPoco>(dom)).ToList();
         }
         public override ProfissaoPoco Selecionar(int id)
         {
             Profissao dom = this.repositorio.Read(id);
-            ProfissaoPoco poco = this.mapConfig.Mapper.Map<ProfissaoPoco>(dom);
+            ProfissaoPoco poco = this.mapeador.Mecanismo.Map<ProfissaoPoco>(dom);
             return poco;
         }
 
         public ProfissaoPoco Criar(ProfissaoPoco obj)
         {
-            Profissao dom = this.mapConfig.Mapper.Map<Profissao>(obj);
+            Profissao dom = this.mapeador.Mecanismo.Map<Profissao>(obj);
             Profissao criado = this.repositorio.Add(dom);
-            ProfissaoPoco poco = this.mapConfig.Mapper.Map<ProfissaoPoco>(criado);
+            ProfissaoPoco poco = this.mapeador.Mecanismo.Map<ProfissaoPoco>(criado);
             return poco;
         }
         public override ProfissaoPoco Atualizar(ProfissaoPoco obj)
         {
-            Profissao dom = this.mapConfig.Mapper.Map<Profissao>(obj);
+            Profissao dom = this.mapeador.Mecanismo.Map<Profissao>(obj);
             Profissao atualizado = this.repositorio.Edit(dom);
-            ProfissaoPoco poco = this.mapConfig.Mapper.Map<ProfissaoPoco>(atualizado);
+            ProfissaoPoco poco = this.mapeador.Mecanismo.Map<ProfissaoPoco>(atualizado);
             return poco;
         }
         public override ProfissaoPoco Excluir(ProfissaoPoco obj)
@@ -62,7 +61,7 @@ namespace Atacado.Service.Auxiliar
         public override ProfissaoPoco Excluir(int id)
         {
             Profissao excluido = this.repositorio.DeleteById(id);
-            ProfissaoPoco poco = this.mapConfig.Mapper.Map<ProfissaoPoco>(excluido);
+            ProfissaoPoco poco = this.mapeador.Mecanismo.Map<ProfissaoPoco>(excluido);
             return poco;
         }
     }
