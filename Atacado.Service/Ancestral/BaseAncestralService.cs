@@ -11,6 +11,13 @@ namespace Atacado.Service.Ancestral
         where TDom : class
     {
         protected MapeadorGenerico<TPoco, TDom> mapeador;
+        protected List<string> mensagemProcessamento;
+        public List<string> MensagensProcessamentos => this.mensagemProcessamento;
+
+        public BaseAncestralService()
+        {
+            this.mensagemProcessamento = new List<string>();
+        }
         public virtual List<TPoco> Listar()
         {
             throw new NotImplementedException();

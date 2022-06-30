@@ -3,38 +3,48 @@ using Atacado.Poco.RH;
 
 namespace Atacado.Business.RH
 {
-    public class FuncionarioRegra : IRule
+
+    public class FuncionarioRegra : RuleAncestor<FuncionarioPoco>, IRule
     {
-        private List<string> ruleMessages;
+        public FuncionarioRegra() : base()
+        { }
+        public FuncionarioRegra(FuncionarioPoco poco) : base(poco)
+        { }
 
-        public List<string> RuleMessages => this.ruleMessages;
-
-        private FuncionarioPoco poco;
-
-        public FuncionarioRegra(FuncionarioPoco poco)
-        {
-            this.ruleMessages = new List<string>();
-            this.poco = poco;
-        }
-
-        public bool Process()
+        public override bool Process()
         {
             bool resultado = true;
 
-            if (this.NomeRegra() == false)
+            string mensagemProcessamento = string.Empty;
+            if (RegraGenericas.NomeRegra(this.poco.NomeFuncionario, ref mensagemProcessamento) == false)
             {
+                this.ruleMessages.Add(mensagemProcessamento);
                 resultado = false;
             }
-            return resultado;
-        }
-        private bool NomeRegra()
-        {
-            if (string.IsNullOrEmpty(this.poco.NomeFuncionario) == true)
+            if (RegraGenericas.SobrenomeRegra(this.poco.SobrenomeFuncionario, ref mensagemProcessamento) == false)
             {
-                this.ruleMessages.Add("Nome não pode ser vazio.");
-                return false;
+                this.ruleMessages.Add(mensagemProcessamento);
+                resultado = false;
             }
-            return true;
+            if (RegraGenericas.SexoRegra(this.poco.Sexo, ref mensagemProcessamento) == false)
+            {
+                this.ruleMessages.Add(mensagemProcessamento);
+                resultado = false;
+            }
+            if (RegraGenericas.EmailRegra(this.poco.EmailFuncionario, ref mensagemProcessamento) == false)
+            {
+                this.ruleMessages.Add(mensagemProcessamento);
+                resultado = false;
+            }
+            
+                return resultado;
         }
+        
+
+
+
+
+
+
     }
 }

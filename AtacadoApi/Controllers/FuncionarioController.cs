@@ -13,38 +13,78 @@ namespace AtacadoApi.Controllers
         public FuncionarioController() : base()
         {
             this.servico = new FuncionarioService();
-        }
+        }/// <summary>
+        /// 
+        /// </summary>
+        /// <param name="skip"></param>
+        /// <param name="take"></param>
+        /// <returns></returns>
         [HttpGet("{skip:int}/{take:int}")]
-        public List<FuncionarioPoco> GetAll(int skip, int take)
+        public ActionResult<List<FuncionarioPoco>> GetAll(int skip, int take)
         {
-            return this.servico.Listar(skip, take);
+            List<FuncionarioPoco> listaResposta = this.servico.Listar(skip, take);
+            return Ok(listaResposta);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id:int}")]
-        public FuncionarioPoco Get(int id)
+        public ActionResult<FuncionarioPoco> Get(int id)
         {
-            return this.servico.Selecionar(id);
+            FuncionarioPoco pocoResposta = this.servico.Selecionar(id);
+            return Ok(pocoResposta); 
         }
         [HttpGet("matricula/{mat:long}")]
-        public FuncionarioPoco GetPorMatricula(long mat)
+        public ActionResult<FuncionarioPoco> GetPorMatricula(long mat)
         {
-            return this.servico.SelecionarPorMatricula(mat); 
+            FuncionarioPoco pocoResposta = this.servico.SelecionarPorMatricula(mat);
+            return Ok(pocoResposta);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="poco"></param>
+        /// <returns></returns>
         [HttpPost]
-        public FuncionarioPoco Post([FromBody] FuncionarioPoco poco)
+        public ActionResult<FuncionarioPoco> Post([FromBody] FuncionarioPoco poco)
         {
-            return this.servico.Criar(poco);
+            FuncionarioPoco pocoResposta = this.servico.Criar(poco);
+            if(pocoResposta == null)
+            {
+                return BadRequest(this.servico.MensagensProcessamentos);
+            }
+            else
+            {
+                return Ok(pocoResposta);
+            }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="poco"></param>
+        /// <returns></returns>
         [HttpPut]
         public FuncionarioPoco Put([FromBody] FuncionarioPoco poco)
         {
             return this.servico.Atualizar(poco);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="poco"></param>
+        /// <returns></returns>
         [HttpDelete]
         public FuncionarioPoco Delete([FromBody] FuncionarioPoco poco)
         {
             return this.servico.Excluir(poco);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id:int}")]
         public FuncionarioPoco Delete(int id)
         {
