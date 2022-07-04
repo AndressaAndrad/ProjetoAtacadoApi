@@ -5,20 +5,27 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AtacadoApi.Controllers
 {
+    /// <summary>
+    /// Recurso Funcionário.
+    /// </summary>
     [Route("api/rh/[controller]")]
     [ApiController]
     public class FuncionarioController : ControllerBase
     {
         private FuncionarioService servico;
+        /// <summary>
+        /// Construtor da classe.
+        /// </summary>
         public FuncionarioController() : base()
         {
             this.servico = new FuncionarioService();
-        }/// <summary>
-        /// 
+        }
+        /// <summary>
+        ///  Realiza a busca por todos os registros, filtrando onde inicia(skip) e a quantidade(take).
         /// </summary>
-        /// <param name="skip"></param>
-        /// <param name="take"></param>
-        /// <returns></returns>
+        /// <param name="skip">Onde inicia os resultados da pesquisa.</param>
+        /// <param name="take"> Quantos registros serão retornados.</param>
+        /// <returns>Coleção de dados.</returns>
         [HttpGet("{skip:int}/{take:int}")]
         public ActionResult<List<FuncionarioPoco>> GetAll(int skip, int take)
         {
@@ -54,6 +61,11 @@ namespace AtacadoApi.Controllers
             }
            
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="mat"></param>
+        /// <returns></returns>
         [HttpGet("matricula/{mat:long}")]
         public ActionResult<FuncionarioPoco> GetPorMatricula(long mat)
         {
