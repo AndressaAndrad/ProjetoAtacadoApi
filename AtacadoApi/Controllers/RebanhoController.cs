@@ -75,7 +75,7 @@ namespace AtacadoApi.Controllers
             }
         }
         /// <summary>
-        /// 
+        /// Criaçao de novos dados.
         /// </summary>
         /// <param name="poco"></param>
         /// <returns></returns>
@@ -93,7 +93,7 @@ namespace AtacadoApi.Controllers
             }
         }
         /// <summary>
-        /// 
+        /// Realiza atualização dos dados selecionado.
         /// </summary>
         /// <param name="poco"></param>
         /// <returns></returns>
@@ -112,7 +112,7 @@ namespace AtacadoApi.Controllers
 
         }
         /// <summary>
-        /// 
+        /// Exclui toods o arquivo.
         /// </summary>
         /// <param name="poco"></param>
         /// <returns></returns>
@@ -132,7 +132,7 @@ namespace AtacadoApi.Controllers
            
         }
         /// <summary>
-        /// 
+        /// Exclui dados por codigo(id).
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>

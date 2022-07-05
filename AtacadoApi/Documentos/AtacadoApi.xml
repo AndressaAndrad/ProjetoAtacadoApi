@@ -4,6 +4,59 @@
         <name>AtacadoApi</name>
     </assembly>
     <members>
+        <member name="F:AtacadoApi.Controllers.EmpresaController.servico">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AtacadoApi.Controllers.EmpresaController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AtacadoApi.Controllers.EmpresaController.GetAll(System.Int32,System.Int32)">
+            <summary>
+            Busca pela empresa por todos os registros, filtrando onde inicia(skip) e a quantidade(take)
+            </summary>
+            <param name="skip">Onde inicia os resultados da pesquisa.</param>
+            <param name="take"> Quantos registros serão retornados.</param>
+            <returns>Coleção de dados.</returns>
+        </member>
+        <member name="M:AtacadoApi.Controllers.EmpresaController.Get(System.Int32)">
+            <summary>
+            Realiza busca pela chave de registro(id).
+            </summary>
+            <param name="id">Chave de registro</param>
+            <returns></returns>
+        </member>
+        <member name="M:AtacadoApi.Controllers.EmpresaController.Post(Atacado.Poco.RH.EmpresaPoco)">
+            <summary>
+            CRiar um registro no recurso.
+            </summary>
+            <param name="poco"> Registro que será criado.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AtacadoApi.Controllers.EmpresaController.Put(Atacado.Poco.RH.EmpresaPoco)">
+            <summary>
+            Atauliza um registro no recurso.
+            </summary>
+            <param name="poco">Registro alterado</param>
+            <returns>Retorna registro alterado.</returns>
+        </member>
+        <member name="M:AtacadoApi.Controllers.EmpresaController.Delete(Atacado.Poco.RH.EmpresaPoco)">
+            <summary>
+            Registro que deseja excluir.
+            </summary>
+            <param name="poco">Registro para excluir.</param>
+            <returns>Retornas o registro excluido.</returns>
+        </member>
+        <member name="M:AtacadoApi.Controllers.EmpresaController.Delete(System.Int32)">
+            <summary>
+            Exclui o registro pelo Codigo(id).
+            </summary>
+            <param name="id">Exclui o codigo desejado.</param>
+            <returns>Item excluido.</returns>
+        </member>
         <member name="T:AtacadoApi.Controllers.FuncionarioController">
             <summary>
             Recurso Funcionário.
@@ -89,21 +142,28 @@
         </member>
         <member name="M:AtacadoApi.Controllers.RebanhoController.Post(Atacado.Poco.Auxiliar.RebanhoPoco)">
             <summary>
-            
+            Criaçao de novos dados.
+            </summary>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AtacadoApi.Controllers.RebanhoController.Put(Atacado.Poco.Auxiliar.RebanhoPoco)">
+            <summary>
+            Realiza atualização dos dados selecionado.
             </summary>
             <param name="poco"></param>
             <returns></returns>
         </member>
         <member name="M:AtacadoApi.Controllers.RebanhoController.Delete(Atacado.Poco.Auxiliar.RebanhoPoco)">
             <summary>
-            
+            Exclui toods o arquivo.
             </summary>
             <param name="poco"></param>
             <returns></returns>
         </member>
         <member name="M:AtacadoApi.Controllers.RebanhoController.DeletePorId(System.Int32)">
             <summary>
-            
+            Exclui dados por codigo(id).
             </summary>
             <param name="id"></param>
             <returns></returns>
