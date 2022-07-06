@@ -168,5 +168,47 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="T:AtacadoApi.Controllers.RelatorioController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AtacadoApi.Controllers.RelatorioController.Get(System.Int32)">
+            <summary>
+            Busca um registro completo de rebanho pelo Código(idRebanho)
+            </summary>
+            <param name="idRebanho"> Chave de registro. </param>
+            <returns>Retorna registro selecionado.</returns>
+        </member>
+        <member name="M:AtacadoApi.Controllers.RelatorioController.GetPorAnoRefIdMun(System.Int32,System.Int32)">
+            <summary>
+            Realiza uma pesquisa filtrando Ano (anoRef) e Código(idMun) retornando uma lista do dados.
+            </summary>
+            <param name="anoRef">Ano que desaja buscar.</param>
+            <param name="idMun">Codigo do IBGE.</param>
+            <returns>Retorno da lista.</returns>
+            
+        </member>
+        <member name="M:AtacadoApi.Controllers.RelatorioController.GetPorCategoria(System.Int32)">
+            <summary>
+            Realiza busca do relatorio por Codigo(IdCat).
+            </summary>
+            <param name="IdCat">Codigo de registro</param>
+            <returns></returns>
+        </member>
+        <member name="M:AtacadoApi.Controllers.RelatorioController.GetPorSubcategoria(System.Int32)">
+            <summary>
+            Realiza busca do relatorio por Codigo(IdSub).
+            </summary>
+            <param name="IdSub">Codigo de registro</param>
+            <returns></returns>
+        </member>
+        <member name="M:AtacadoApi.Controllers.RelatorioController.GetPorProduto(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="IdProt"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

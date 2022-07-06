@@ -15,28 +15,37 @@ namespace Atacado.EF.Database
         [Column("Nome_Municipio")]
         [Unicode(false)]
         public string NomeMunicipio { get; set; } = null!;
+
         [Column("ID_UF")]
         public int IdUf { get; set; }
-        [Column("Sigla_UF")]
+
+        [Column("SiglaUF")]
         [StringLength(2)]
         [Unicode(false)]
         public string SiglaUf { get; set; } = null!;
-        [Column("ID_Mesoregiao")]
+
+        [Column("Mesoregiao")]
         public int IdMesoregiao { get; set; }
-        [Column("ID_Microregiao")]
+
+        [Column("Microregiao")]
         public int IdMicroregiao { get; set; }
-        [Column("Codigo_IBGE_6")]
+
+        [Column("IBGE_6")]
         public int CodigoIbge6 { get; set; }
-        [Column("Codigo_IBGE_7")]
+
+        [Column("IBGE_7")]
         public int CodigoIbge7 { get; set; }
+
         [Column("Populacao_Municipio")]
-        public long? PopulacaoMunicipio { get; set; }
+        public int? PopulacaoMunicipio { get; set; }
+
         [Column("Porte_Municipio")]
         [StringLength(50)]
         [Unicode(false)]
         public string? PorteMunicipio { get; set; }
-        [Column("CEP_Municipio")]
-        public long? CepMunicipio { get; set; }
+
+        [Column("Cep_Municipio")]
+        public int? CepMunicipio { get; set; }
         public bool? Situacao { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime? DataInclusao { get; set; }
