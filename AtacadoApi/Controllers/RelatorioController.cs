@@ -187,7 +187,7 @@ namespace AtacadoApi.Controllers
         /// Realiza busca do relatorio por Codigo(IdSub).
         /// </summary>
         /// <param name="IdSub">Codigo de registro</param>
-        /// <returns></returns>
+        /// <returns>Lista de registro.</returns>
 
         [HttpGet("Subategoria/{IdSub:int}")]
         public ActionResult<List<object>> GetPorSubcategoria(int IdSub)
@@ -221,9 +221,9 @@ namespace AtacadoApi.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Realiza busca de um relatorio por Produto(IdProduto).
         /// </summary>
-        /// <param name="IdProt"></param>
+        /// <param name="IdProt">Codigo de registro</param>
         /// <returns></returns>
         [HttpGet("Produto/{IdProt:int}")]
         public ActionResult<List<object>> GetPorProduto(int IdProt)

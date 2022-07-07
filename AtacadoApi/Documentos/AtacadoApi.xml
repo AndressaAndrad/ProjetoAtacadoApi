@@ -201,13 +201,27 @@
             Realiza busca do relatorio por Codigo(IdSub).
             </summary>
             <param name="IdSub">Codigo de registro</param>
-            <returns></returns>
+            <returns>Lista de registro.</returns>
         </member>
         <member name="M:AtacadoApi.Controllers.RelatorioController.GetPorProduto(System.Int32)">
             <summary>
+            Realiza busca de um relatorio por Produto(IdProduto).
+            </summary>
+            <param name="IdProt">Codigo de registro</param>
+            <returns></returns>
+        </member>
+        <member name="M:AtacadoApi.Controllers.RelatorioReworController.GetRelatorioPorCategoriaID(System.Int32)">
+            <summary>
             
             </summary>
-            <param name="IdProt"></param>
+            <param name="IdCat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AtacadoApi.Controllers.RelatorioReworController.GetRelatorioPorSubcategoriaID(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="IdSub"></param>
             <returns></returns>
         </member>
     </members>
