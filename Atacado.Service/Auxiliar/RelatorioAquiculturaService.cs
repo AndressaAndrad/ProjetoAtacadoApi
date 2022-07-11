@@ -15,57 +15,60 @@ namespace Atacado.Service.Auxiliar
 
         public List<RelatorioAquiculturaPoco> AquiculturaPorIDeAno(int IdMun, int AnoRef)
         {
-            var pesquisa =
-                (from aqui in this.contexto.Aquiculturas
-                 join tipoa in this.contexto.TipoAquiculturas on aqui.IdTipoAquicultura equals tipoa.IdTipoAquicultura
-                 join muns in this.contexto.Municipios on aqui.IdMunicipio equals muns.CodigoIbge6
-                 join uni in this.contexto.UnidadesFederacaos on muns.SiglaUf equals uni.SiglaUf
-                 where ((aqui.IdMunicipio == IdMun) && (aqui.Ano == AnoRef) && (aqui.Producao != null))
-                 select new RelatorioAquiculturaPoco
-                 {
-                     IdAquicultura = aqui.IdAquicultura,
-                     Ano = aqui.Ano,
-                     IdTipoAquicultura = aqui.IdTipoAquicultura,
-                     DescricaoTipoAquicultura = tipoa.DescricaoTipoAquicultura,
-                     Producao = aqui.Producao,
-                     ValorProducao = aqui.ValorProducao,
-                     ProporcaoValorProducao = aqui.ProporcaoValorProducao,
-                     Moeda = aqui.Moeda,
-                     IdMunicipio = aqui.IdMunicipio,
-                     nomemunicipio = muns.NomeMunicipio,
-                     siglauf = muns.SiglaUf,
-                     nomeuf = uni.SiglaUf
-
-                 }).ToList();
-            return pesquisa; ;
+            List<RelatorioAquiculturaPoco> pesquisa =
+                 (from aquis in this.contexto.Aquiculturas
+                  join tipos in this.contexto.TipoAquiculturas on aquis.IdTipoAquicultura equals tipos.IdTipoAquicultura
+                  join muns in this.contexto.Municipios on aquis.IdMunicipio equals muns.CodigoIbge7
+                  join ufs in this.contexto.UnidadesFederacaos on muns.SiglaUf equals ufs.SiglaUf
+                  where (aquis.IdMunicipio == IdMun)
+                  && (aquis.Ano == AnoRef)
+                  && (aquis.Producao.HasValue == true)
+                  select new RelatorioAquiculturaPoco()
+                  {
+                      IdAquicultura = aquis.IdAquicultura,
+                      Ano = aquis.Ano,
+                      IdMunicipio = aquis.IdMunicipio,
+                      NomeMunicipio = muns.NomeMunicipio,
+                      SiglaUF = ufs.SiglaUf,
+                      DescricaoUF = ufs.DescricaoUf,
+                      IdTipoAquicultura = aquis.IdTipoAquicultura,
+                      DescricaoTipoAquicultura = tipos.DescricaoTipoAquicultura,
+                      Producao = aquis.Producao,
+                      ValorProducao = aquis.ValorProducao,
+                      ProporcaoValorProducao = aquis.ProporcaoValorProducao,
+                      Moeda = aquis.Moeda
+                  }).ToList();
+            return pesquisa;
 
         }
 
         public List<RelatorioAquiculturaPoco> AquiculturaPorTipoeAno(int TipoA, int AnoRef, int IdMun)
         {
-            var pesquisa =
-                (from aqui in this.contexto.Aquiculturas
-                 join tipoa in this.contexto.TipoAquiculturas on aqui.IdTipoAquicultura equals tipoa.IdTipoAquicultura
-                 join muns in this.contexto.Municipios on aqui.IdMunicipio equals muns.CodigoIbge6
-                 join uni in this.contexto.UnidadesFederacaos on muns.SiglaUf equals uni.SiglaUf
-                 where ((aqui.IdTipoAquicultura == TipoA) && (aqui.Ano == AnoRef) && (aqui.IdMunicipio == IdMun))
-                 select new RelatorioAquiculturaPoco
+            List<RelatorioAquiculturaPoco> pesquisa =
+                (from aquis in this.contexto.Aquiculturas
+                 join tipos in this.contexto.TipoAquiculturas on aquis.IdTipoAquicultura equals tipos.IdTipoAquicultura
+                 join muns in this.contexto.Municipios on aquis.IdMunicipio equals muns.CodigoIbge7
+                 join ufs in this.contexto.UnidadesFederacaos on muns.SiglaUf equals ufs.SiglaUf
+                 where
+                    (aquis.IdTipoAquicultura == TipoA) &&
+                    (aquis.Ano == AnoRef) &&
+                    (aquis.IdMunicipio == IdMun)
+                 select new RelatorioAquiculturaPoco()
                  {
-                     IdAquicultura = aqui.IdAquicultura,
-                     Ano = aqui.Ano,
-                     IdTipoAquicultura = aqui.IdTipoAquicultura,
-                     DescricaoTipoAquicultura = tipoa.DescricaoTipoAquicultura,
-                     Producao = aqui.Producao,
-                     ValorProducao = aqui.ValorProducao,
-                     ProporcaoValorProducao = aqui.ProporcaoValorProducao,
-                     Moeda = aqui.Moeda,
-                     IdMunicipio = aqui.IdMunicipio,
-                     nomemunicipio = muns.NomeMunicipio,
-                     siglauf = muns.SiglaUf,
-                     nomeuf = uni.SiglaUf
-
+                     IdAquicultura = aquis.IdAquicultura,
+                     Ano = aquis.Ano,
+                     IdMunicipio = aquis.IdMunicipio,
+                     NomeMunicipio = muns.NomeMunicipio,
+                     SiglaUF = ufs.SiglaUf,
+                     DescricaoUF = ufs.DescricaoUf,
+                     IdTipoAquicultura = aquis.IdTipoAquicultura,
+                     DescricaoTipoAquicultura = tipos.DescricaoTipoAquicultura,
+                     Producao = aquis.Producao,
+                     ValorProducao = aquis.ValorProducao,
+                     ProporcaoValorProducao = aquis.ProporcaoValorProducao,
+                     Moeda = aquis.Moeda
                  }).ToList();
-            return pesquisa; ;
+            return pesquisa;
 
         }
     }

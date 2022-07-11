@@ -22,7 +22,7 @@ namespace AtacadoApi.Controllers
         /// <param name="IdMun">Identificacao do Municipio</param>
         /// <param name="Ano">Ano de busca</param>
         /// <returns></returns>
-        [HttpGet("Aquicultura/{IdMun:int}/{Ano:int}")]
+        [HttpGet("ConsultaPor/IdMunicipio/{IdMun:int}/Ano/{Ano:int}")]
         public ActionResult<List<RelatorioAquiculturaPoco>> GetRelatorioPorMunicipioIDeAno(int IdMun, int Ano)
         {
             try
@@ -45,7 +45,7 @@ namespace AtacadoApi.Controllers
         /// <param name="IdMun">Identificacao do Municipio</param>
         /// <returns></returns>
 
-        [HttpGet("Aquicultura/{TipoA:int}/{Ano:int}/{IdMun:int}")]
+        [HttpGet("ConsultaPor/IdTipoAquicultura/{TipoA:int}/Ano/{Ano:int}/IdMunicipio/{IdMun:int}")]
         public ActionResult<List<RelatorioAquiculturaPoco>> GetRelatorioPorAquiculturaIDeAno(int TipoA, int Ano, int IdMun)
         {
             try

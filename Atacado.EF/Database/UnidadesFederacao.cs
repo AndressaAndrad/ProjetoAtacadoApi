@@ -20,31 +20,24 @@ namespace Atacado.EF.Database
         }
 
         [Key]
-        [Column("ID_Unidades_Federacao")]
+        [Column("ID_UF")]
         public int IdUf { get; set; }
-
-        [Column("Descricao_Unidades_Federacao")]
+        [Column("Descricao_UF")]
         [Unicode(false)]
         public string DescricaoUf { get; set; } = null!;
-
-        [Column("SiglaUF")]
+        [Column("Sigla_UF")]
         [StringLength(2)]
         [Unicode(false)]
         public string SiglaUf { get; set; } = null!;
-
         [Column("Regiao_Brasil")]
         [StringLength(20)]
         [Unicode(false)]
         public string? RegiaoBrasil { get; set; }
-
         public bool? Situacao { get; set; }
-
         [Column(TypeName = "datetime")]
         public DateTime? DataInclusao { get; set; }
-
         [Column(TypeName = "datetime")]
         public DateTime? DataAlteracao { get; set; }
-
         [Column(TypeName = "datetime")]
         public DateTime? DataExclusao { get; set; }
 
