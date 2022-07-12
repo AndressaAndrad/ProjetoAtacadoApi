@@ -20,8 +20,13 @@ namespace Atacado.Service.Auxiliar
             this.mapeador = new MapeadorGenerico<ProfissaoPoco, Profissao>();
             this.repositorio = new ProfissaoRepository(new AtacadoContext());
         }
+        public ProfissaoService(AtacadoContext contexto)
+        {
+            this.mapeador = new MapeadorGenerico<ProfissaoPoco, Profissao>();
+            this.repositorio = new ProfissaoRepository(contexto);
+        }
 
-        
+
         public List<ProfissaoPoco> Listar(int pular, int exibir)
         {
             List<Profissao> listDOM = this.repositorio.Read(pular, exibir).ToList();

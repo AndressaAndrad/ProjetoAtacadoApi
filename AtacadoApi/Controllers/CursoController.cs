@@ -1,4 +1,5 @@
-﻿using Atacado.Poco.Auxiliar;
+﻿using Atacado.EF.Database;
+using Atacado.Poco.Auxiliar;
 using Atacado.Service.Auxiliar;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,14 +11,20 @@ namespace AtacadoApi.Controllers
     public class CursoController : ControllerBase
     {
         private CursoService servico;
-        public CursoController() : base()
+        public CursoController(AtacadoContext contexto) : base()
         {
-            this.servico = new CursoService();
+            this.servico = new CursoService(contexto);
         }
         [HttpGet("{skip:int}/{take:int}")]
         public List<CursoPoco> GetAll(int skip, int take)
         {
             return this.servico.Listar(skip, take);
+        }
+
+        [HttpGet("{id:int}")]
+        public CursoPoco GetByID(int id)
+        {
+            return this.servico.Selecionar(id);
         }
         [HttpPost]
         public CursoPoco Post([FromBody] CursoPoco poco)

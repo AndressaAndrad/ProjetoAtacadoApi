@@ -20,7 +20,11 @@ namespace Atacado.Service.Estoque
             this.mapeador = new MapeadorGenerico<ProdutoPoco, Produto>();
             this.repositorio = new ProdutoRepository(new AtacadoContext());
         }
-
+        public ProdutoService(AtacadoContext contexto)
+        {
+            this.mapeador = new MapeadorGenerico<ProdutoPoco, Produto>();
+            this.repositorio = new ProdutoRepository(contexto);
+        }
         public List<ProdutoPoco> Listar(int pular, int exibir)
         {
             List<Produto> listDOM = this.repositorio.Read(pular, exibir).ToList();

@@ -21,7 +21,13 @@ namespace Atacado.Service.Auxiliar
             this.repositorio = new RebanhoRepository(new AtacadoContext()) ;
         }
 
-       
+        public RebanhoService(AtacadoContext contexto)
+        {
+            this.mapeador = new MapeadorGenerico<RebanhoPoco, Rebanho>();
+            this.repositorio = new RebanhoRepository(contexto);
+        }
+
+
         public List<RebanhoPoco> Listar(int pular, int exibir)
         {
             List<Rebanho> listDOM = this.repositorio.Read(pular, exibir).ToList();

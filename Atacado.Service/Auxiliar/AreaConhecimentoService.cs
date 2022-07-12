@@ -20,6 +20,12 @@ namespace Atacado.Service.Auxiliar
             this.mapeador = new MapeadorGenerico<AreaConhecimentoPoco, AreaConhecimento>();
             this.repositorio = new AreaConhecimentoRepository(new AtacadoContext());
         }
+
+        public AreaConhecimentoService(AtacadoContext contexto)
+        {
+            this.mapeador = new MapeadorGenerico<AreaConhecimentoPoco, AreaConhecimento>();
+            this.repositorio = new AreaConhecimentoRepository(contexto);
+        }
         public override List<AreaConhecimentoPoco> Listar()
         {
             List<AreaConhecimento> listDOM = this.repositorio.Read().ToList();

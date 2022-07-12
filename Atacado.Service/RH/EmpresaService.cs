@@ -16,6 +16,13 @@ namespace Atacado.Service.RH
             this.mapeador = new MapeadorGenericoEnvelopado<EmpresaPoco, Empresa, EmpresaEnvelopeJSON>();
             this.repositorio = new EmpresaRepository(new AtacadoContext());
         }
+
+        public EmpresaService(AtacadoContext contexto) : base()
+        {
+            this.mapeador = new MapeadorGenericoEnvelopado<EmpresaPoco, Empresa, EmpresaEnvelopeJSON>();
+            this.repositorio = new EmpresaRepository(contexto);
+        }
+
         public List<EmpresaEnvelopeJSON> Listar(int pular, int exibir)
         {
             List<Empresa> listaDOM = this.repositorio.Read(pular, exibir).ToList();

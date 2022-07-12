@@ -1,4 +1,5 @@
-﻿using Atacado.Service.Estoque;
+﻿using Atacado.EF.Database;
+using Atacado.Service.Estoque;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,9 +11,9 @@ namespace AtacadoApi.Controllers
     {
         private RelatorioService servico;
 
-        public ReworkRelatorioController() : base()
+        public ReworkRelatorioController(AtacadoContext contexto) : base()
         {
-            this.servico = new RelatorioService();
+            this.servico = new RelatorioService(contexto);
         }
         /// <summary>
         /// 

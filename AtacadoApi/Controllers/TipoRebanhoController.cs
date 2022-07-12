@@ -1,4 +1,5 @@
-﻿using Atacado.Mapper;
+﻿using Atacado.EF.Database;
+using Atacado.Mapper;
 using Atacado.Poco.Auxiliar;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,9 +11,9 @@ namespace AtacadoApi.Controllers
     public class TipoRebanhoController : ControllerBase
     {
         private TipoRebanhoService servico;
-        public TipoRebanhoController() : base()
+        public TipoRebanhoController(AtacadoContext contexto) : base()
         {
-            this.servico = new TipoRebanhoService();
+            this.servico = new TipoRebanhoService(contexto);
         }
 
         [HttpGet]

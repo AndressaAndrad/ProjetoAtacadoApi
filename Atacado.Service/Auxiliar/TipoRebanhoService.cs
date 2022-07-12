@@ -21,6 +21,11 @@ namespace Atacado.Mapper
             this.mapeador = new MapeadorGenerico<TipoRebanhoPoco, TipoRebanho>();
             this.repositorio = new TipoRebanhoRepository(new AtacadoContext());
         }
+        public TipoRebanhoService(AtacadoContext contexto)
+        {
+            this.mapeador = new MapeadorGenerico<TipoRebanhoPoco, TipoRebanho>();
+            this.repositorio = new TipoRebanhoRepository(contexto);
+        }
 
         public override List<TipoRebanhoPoco> Listar()
         {

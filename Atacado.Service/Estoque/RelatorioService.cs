@@ -21,10 +21,20 @@ namespace Atacado.Service.Estoque
 
         public RelatorioService()
         {
+            this.contexto = new AtacadoContext();
             this.categorioRepo = new CategoriaRepository(this.contexto);
             this.subcategorioRepo = new SubcategoriaRepository(this.contexto);
             this.produtoRepo = new ProdutoRepository(this.contexto);
-            this.contexto = new AtacadoContext();
+           
+        }
+
+        public RelatorioService(AtacadoContext contexto)
+        {
+            this.contexto = contexto;
+            this.categorioRepo = new CategoriaRepository(this.contexto);
+            this.subcategorioRepo = new SubcategoriaRepository(this.contexto);
+            this.produtoRepo = new ProdutoRepository(this.contexto);
+            
         }
 
         public List<RelatorioPoco> CategoriaPorID(int IdCat)

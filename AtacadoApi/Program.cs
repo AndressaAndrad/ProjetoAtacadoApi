@@ -1,4 +1,6 @@
 
+using Atacado.EF.Database;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 
@@ -8,7 +10,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+string conStr = builder.Configuration.GetConnectionString("Atacado");
+
+builder.Services.AddDbContext<AtacadoContext>(options => options.UseSqlServer(conStr));
+
 builder.Services.AddEndpointsApiExplorer();
+
 
 //Alterado pelo programador.
 builder.Services.AddSwaggerGen(options =>
