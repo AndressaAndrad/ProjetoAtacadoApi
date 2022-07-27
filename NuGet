@@ -1,0 +1,5 @@
+dotnet add Teste.EF package Microsoft.EntityFrameworkCore --version 6.0.7
+dotnet add Teste.EF package Microsoft.EntityFrameworkCore.Tools --version 6.0.7
+dotnet add Teste.EF package Microsoft.EntityFrameworkCore.SqlServer --version 6.0.7 
+dotnet add package AutoMapper --version 11.0.1
+dotnet add package Newtonsoft.Json --version 13.0.1
